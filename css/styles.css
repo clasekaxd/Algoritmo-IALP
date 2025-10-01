@@ -1,92 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    max-width: 800px;
-    text-align: center;
+    font-family: 'Comic Neue', cursive;
+    background-color: #f0f8ff; /* Un azul cielo muy claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.instrucciones {
+.juego-container {
     background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    max-width: 600px;
-}
-
-.instrucciones p {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     text-align: center;
-}
-
-.instrucciones ol {
-    margin: 15px auto;
-    padding-left: 0;
-    list-style-position: inside;
-    text-align: left;
-    max-width: 500px;
-}
-
-.instrucciones ol li {
-    margin: 10px 0;
-    color: #444;
 }
 
 h1 {
-    color: #333;
+    color: #ff6347; /* Un color tomate divertido */
+    font-size: 36px;
+}
+
+.instrucciones {
+    background-color: #fffacd; /* Amarillo limón */
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 18px;
 }
 
 #provincias-lista {
     padding: 0;
     margin: 20px 0;
-}
-
-#provincias-lista {
-    padding: 0;
-    margin: 20px auto;
-    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 #provincias-lista li {
     list-style: none;
-    padding: 8px;
+    padding: 10px 20px;
     cursor: pointer;
-    text-align: center;
-    margin: 5px auto;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background-color: #add8e6; /* Azul claro */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#provincias-lista li:hover {
+    transform: scale(1.1);
 }
 
 #provincias-lista li.selected {
-    background-color: yellow;
+    background-color: #ffd700; /* Oro */
+    transform: scale(1.1);
 }
 
 #mapa {
     display: block;
     margin: 20px auto;
-    background-color: white;
+    background-color: #f5f5f5;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+#mapa rect {
+    cursor: pointer;
+    transition: fill 0.3s;
+}
+
 #mapa rect.highlight {
-    fill: yellow;
+    fill: #32cd32; /* Verde lima */
+    animation: bounce 0.5s;
 }
 
 .nombre-provincia {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    fill: #333;
+    fill: #ff69b4; /* Rosa fuerte */
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .nombre-provincia.visible {
     opacity: 1;
+}
+
+#reset-btn {
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #ff4500; /* Naranja rojo */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+#reset-btn:hover {
+    transform: scale(1.1);
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
 }

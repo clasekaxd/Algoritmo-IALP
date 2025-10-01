@@ -3,38 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>¡A Jugar con las Provincias!</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>¡Juguemos a encontrar las provincias! 🎮</h1>
-    
-    <div class="instrucciones">
-        <p>¡Hola amiguito! 👋 Vamos a jugar un juego muy divertido:</p>
-        <ol>
-            <li>Primero, busca en la lista el nombre de una provincia que quieras encontrar</li>
-            <li>Dale un click al nombre de la provincia para seleccionarla 🖱️</li>
-            <li>Ahora, ¡busca esa provincia en el mapa de abajo!</li>
-            <li>Cuando creas que la has encontrado, dale click</li>
-            <li>Si aciertas, ¡la provincia se iluminará como una estrella! ⭐</li>
-        </ol>
-        <p>¿Estás listo para empezar? ¡Vamos a jugar! 🎯</p>
+    <div class="juego-container">
+        <h1>¡Juguemos a encontrar las provincias! 🎮</h1>
+        
+        <div class="instrucciones">
+            <p>¡Hola! ¡Vamos a jugar! Elige una provincia de la lista y luego búscala en el mapa. ¡A ver si aciertas!</p>
+        </div>
+
+        <ul id="provincias-lista">
+            <li data-provincia="provincia1">Madrid</li>
+            <li data-provincia="provincia2">Guadalajara</li>
+            <li data-provincia="provincia3">Toledo</li>
+        </ul>
+
+        <svg id="mapa" width="400" height="300" viewBox="0 0 400 300">
+            <g>
+                <rect id="provincia1" data-nombre="Madrid" x="50" y="50" width="80" height="60" fill="#eee" stroke="#333" />
+                <rect id="provincia2" data-nombre="Guadalajara" x="150" y="100" width="80" height="60" fill="#eee" stroke="#333" />
+                <rect id="provincia3" data-nombre="Toledo" x="250" y="50" width="80" height="60" fill="#eee" stroke="#333" />
+                <text id="nombre-provincia" x="200" y="250" text-anchor="middle" class="nombre-provincia"></text>
+            </g>
+        </svg>
+
+        <button id="reset-btn">¡Jugar de Nuevo!</button>
     </div>
 
-    <ul id="provincias-lista">
-        <li data-provincia="provincia1">Madrid</li>
-        <li data-provincia="provincia2">Guadalajara</li>
-        <li data-provincia="provincia3">Toledo</li>
-        <!-- Añade más provincias aquí -->
-    </ul>
-    <svg id="mapa" width="400" height="300" style="border:1px solid #ccc;">
-        <g>
-            <rect id="provincia1" data-nombre="Madrid" x="50" y="50" width="80" height="60" fill="#eee" stroke="#333" />
-            <rect id="provincia2" data-nombre="Guadalajara" x="150" y="100" width="80" height="60" fill="#eee" stroke="#333" />
-            <rect id="provincia3" data-nombre="Toledo" x="250" y="50" width="80" height="60" fill="#eee" stroke="#333" />
-            <!-- Añade más formas para otras provincias -->
-            <text id="nombre-provincia" x="200" y="250" text-anchor="middle" class="nombre-provincia"></text>
-        </g>
-    </svg>
+    <audio id="success-sound" src="https://www.myinstants.com/media/sounds/success.mp3" preload="auto"></audio>
+
 </body>
+</html>
